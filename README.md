@@ -37,7 +37,7 @@ Each week we will update this repository with the material used in this week.
 The schedule below shows the weeks when we will have [oral feedback sessions](TBA).
 Note that this schedule is preliminary and subject to changes.
 
-Remember that when you book a slot in the [Oral Feedback Scheduler in LearnIT](TBA), the **slot is recurrent, i.e., it is for all the weeks below in the day of the week and time that you selected**.
+Remember that when you book a slot in the [Oral Feedback Scheduler in LearnIT](https://learnit.itu.dk/mod/organizer/view.php?id=250667), the **slot is recurrent, i.e., it is for all the weeks below in the day of the week and time that you selected**.
 
 | Course week | Calendar Week | Exercises                                                 |
 |-------------|---------------|-----------------------------------------------------------|
