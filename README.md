@@ -10,32 +10,33 @@ In this MSc course, you learn how to write correct and efficient concurrent and 
 Each week we will update this repository with the material used in this week.
 
 
-## Lectures Schedule (tentative)
+## Lectures Schedule 
 
 | Lecture   | Week   | Topic                                                | Speaker (tentative)                          |
 | --------- | ------ | ---------------------------------------------------- | -------------------------------------------- |
 | 1         | 35     | [Intro to concurrency & Mutual exclusion](week01/)   | Raúl                                         |
-| 2         | 36     | [Shared memory I](week02/)                           | Raúl                                         |
-| 3         | 37     | [Java Memory Model](week03/)                         | Raúl                                         |
-| 4         | 38     | [Shared memory II](week04/)                          | Raúl                                         |
-| 5         | 39     | [Testing & Verification](week05/)                    | Raúl                                         |
-| 6         | 40     | [Lock free data structures](week06/)                 | Raúl                                         |
-| 7         | 41     | [Linearizability](week07/)                           | Raúl                                         |
+| 2         | 36     | Shared memory I                                      | Raúl                                         |
+| 3         | 37     | Java Memory Model                                    | Raúl                                         |
+| 4         | 38     | Shared memory II                                     | Raúl                                         |
+| 5         | 39     | Testing & Verification                               | Raúl                                         |
+| 6         | 40     | Lock free data structures                            | Raúl                                         |
+| 7         | 41     | Linearizability                                      | Raúl                                         |
 |           | 42     | *No Lecture: Fall break*                             | --                                           |
-| 8         | 43     | [Performance measurements](week08/)                  | Peter                                        |
-| 9         | 44     | [Performance and scalability](week09/)               | Peter                                        |
-| 10        | 45     | [Parallel Streams (React)](week10/)                  | Peter                                        |
-| 11        | 46     | [GPU Programming](week11/)                           | Peter                                        |
-| 12        | 47     | [Message passing I](week12/)                         | Raúl                                         |
-| 13        | 48     | [Message Passing II](week13/)                        | Raúl                                         |
-| 14        | 49     | [Guest lecture + Exam prep](week14/)                 | TBD + Raúl                                   |
+| 8         | 43     | Performance measurements                             | Peter                                        |
+| 9         | 44     | Performance and scalability                          | Peter                                        |
+| 10        | 45     | Parallel Streams (React)                             | Peter                                        |
+| 11        | 46     | GPU Programming                                      | Peter                                        |
+| 12        | 47     | Message passing I                                    | Raúl                                         |
+| 13        | 48     | Message Passing II                                   | Raúl                                         |
+| 14        | 49     | Guest lecture + Exam prep                            | TBD + Raúl                                   |
 
 
 
-## Oral Feedback Sessions Schedule (tentative)
+## Oral Feedback Sessions Schedule 
 
 The schedule below shows the weeks when we will have [oral feedback sessions](TBA).
 Note that this schedule is preliminary and subject to changes.
+However, the week numbers for oral feedback sessions are fixed, only the content of assignments may vary.
 
 Remember that when you book a slot in the [Oral Feedback Scheduler in LearnIT](https://learnit.itu.dk/mod/organizer/view.php?id=250667), the **slot is recurrent, i.e., it is for all the weeks below in the day of the week and time that you selected**.
 
