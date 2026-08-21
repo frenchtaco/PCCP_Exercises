@@ -73,7 +73,7 @@ It is also recommended to set the `JAVA_HOME` environment variable to the root o
 
 ## Running the exercises in Gradle
 
-1. Clone the course repository `$ git clone https://github.itu.dk/jst/PCPP2025-public.git`
+1. Clone the course repository `$ git clone https://github.itu.dk/pcpp/PCPP2026-public.git`
 2. Navigate to the exercises folder for first week, e.g., `$ cd week01/code-exercises/week01exercises/`.
 3. Execute the desired program by running `$ gradle -PmainClass=<package>.<java_class> run`, e.g., `$ gradle -PmainClass=exercises01.TestLongCounterExperiments run`.
    - Note that `<java_class>` should include a `main()` method.
