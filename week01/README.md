@@ -16,7 +16,8 @@ The goals of this lecture are:
   * Chapter 2, complete except Section 2.5
   * Chapter 16, Section 16.1.3
 
-* More to appear.
+* Pardo, Sestoft, Staunstrup:
+  * [Intro to Concurrency](../concurrency-notes/pcpp_concurrency_1.pdf), complete
   
 ### Optional readings
 
