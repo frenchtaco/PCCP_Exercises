@@ -26,8 +26,8 @@ The goals of this lecture are:
   
 ## Exercises
 
-See file [exercises01.pdf](TBA)
+See file [exercises01.pdf](exercises01.pdf)
 
 ## Lecture slides
 
-See file [lecture01.pdf](TBA)
+See file [lecture01.pdf](lecture01.pdf)
