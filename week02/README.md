@@ -19,6 +19,9 @@ The goals of this lecture are:
 * Herlihy:
   * Chapter 8, complete.
   
+* Pardo, Sestoft, Staunstrup:
+  * [Monitors and blocking operations](../concurrency-notes/pcpp_concurrency_2.pdf), complete
+
 ### Optional readings
 
 * Tony Hoare's paper introducing monitors.
