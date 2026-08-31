@@ -1,0 +1,2 @@
+rootProject.name = 'lecture02'
+include('app')
