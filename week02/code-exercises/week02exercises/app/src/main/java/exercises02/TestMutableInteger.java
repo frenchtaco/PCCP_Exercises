@@ -5,7 +5,7 @@ package exercises02;
 
 public class TestMutableInteger {
     public static void main(String[] args) {
-        final MutableInteger mi = new MutableInteger();
+        final MutableIntegerVolatile mi = new MutableIntegerVolatile();
         Thread t = new Thread(() -> {
             while (mi.get() == 0)        // Loop while zero
             {/* Do nothing*/ }
@@ -20,9 +20,20 @@ public class TestMutableInteger {
     }
 }
 
-class MutableInteger {
+class MutableIntegerSync {
     // WARNING: Not ready for usage by concurrent programs
     private int value = 0;
+    public synchronized void set(int value) {
+        this.value = value;
+    }
+    public int get() {
+        return value;
+    }
+}
+
+class MutableIntegerVolatile {
+    // WARNING: Not ready for usage by concurrent programs
+    private volatile int value = 0;
     public void set(int value) {
         this.value = value;
     }

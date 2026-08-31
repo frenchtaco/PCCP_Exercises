@@ -5,7 +5,7 @@ package exercises02;
 public class TestLocking0 {
     public static void main(String[] args) {
         final int count = 1_000_000;
-        Mystery m = new Mystery();
+        NewMystery m = new NewMystery();
         Thread t1 = new Thread(() -> {
             for (int i=0; i<count; i++)
                 m.addInstance(1);
@@ -33,5 +33,29 @@ class Mystery {
 
     public static synchronized double sum() {
         return sum;
+    }
+}
+
+class NewMystery {
+    private static double sum = 0;
+    private static Object lock = new Object();
+
+    public static void addStatic(double x) {
+        synchronized (lock) {
+            sum += x;
+        }
+        
+    }
+
+    public void addInstance(double x) {
+        synchronized (lock) {
+            sum += x;
+        }
+    }
+
+    public static double sum() {
+        synchronized (lock) {
+            return sum;
+        }
     }
 }

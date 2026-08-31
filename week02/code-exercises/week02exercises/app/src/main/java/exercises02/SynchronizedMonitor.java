@@ -23,14 +23,18 @@ public class SynchronizedMonitor {
     }
 
     public synchronized void writeLock() {
-        while (readers > 0 || writer) {
-            try {
+        try {
+            while (writer) {
                 wait();
-            } catch (InterruptedException e) {
-                System.out.println(e.getMessage());
+                
             }
+            writer = true;
+            while (readers > 0) {
+                wait();
+            }
+        } catch (InterruptedException e) {
+            System.out.println(e.getMessage());
         }
-        writer = true;
     }
 
     public synchronized void writeUnlock() {
