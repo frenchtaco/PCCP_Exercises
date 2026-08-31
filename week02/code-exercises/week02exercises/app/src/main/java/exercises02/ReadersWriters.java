@@ -5,7 +5,7 @@ package exercises02;
 public class ReadersWriters {
 
     public ReadersWriters() {
-        TestMonitor m = new TestMonitor();
+        SynchronizedMonitor m = new SynchronizedMonitor();
 
         final int numReadersWriters = 10;
 
