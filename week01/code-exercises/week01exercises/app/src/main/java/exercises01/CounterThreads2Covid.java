@@ -7,7 +7,7 @@ import java.util.concurrent.locks.ReentrantLock;
 public class CounterThreads2Covid {
     ReentrantLock l = new ReentrantLock();
     long counter = 0;
-    //final long PEOPLE  = 10_000;
+    final long PEOPLE  = 10_000;
     final long MAX_PEOPLE_COVID = 15_000;
 
     public CounterThreads2Covid() {
@@ -33,16 +33,13 @@ public class CounterThreads2Covid {
 
     public class Turnstile extends Thread {
         public void run() {
-            for (int i = 0; i < MAX_PEOPLE_COVID; i++) {
+            for (int i = 0; i < PEOPLE; i++) {
                 l.lock();
                 if (counter < MAX_PEOPLE_COVID) {
-                    counter++;  
+                    counter++;
                 }
                 l.unlock();
             }
         }
     }
 }
-
-// The solution is safe because we do the if-check inside the locking,
-// thus making it part of the critical section

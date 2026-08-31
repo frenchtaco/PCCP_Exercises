@@ -9,7 +9,7 @@ public class TestLongCounterExperiments {
     ReentrantLock lock = new ReentrantLock();
     LongCounter lc = new LongCounter();
     int counts = 10_000_000;
-    //int counts = 100;
+    //int counts = 10_000;
     public TestLongCounterExperiments() {
 
         Thread t1 = new Thread(() -> {
@@ -41,7 +41,7 @@ public class TestLongCounterExperiments {
         public void increment() {
             //count = count + 1;
             lock.lock();
-            count += 1;
+            count++;
             lock.unlock(); 
         }
 
