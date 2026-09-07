@@ -16,7 +16,7 @@ Each week we will update this repository with the material used in this week.
 | --------- | ------ | ---------------------------------------------------- | -------------------------------------------- |
 | 1         | 35     | [Intro to concurrency & Mutual exclusion](week01/)   | Raúl                                         |
 | 2         | 36     | [Shared memory I](week02/)                           | Raúl                                         |
-| 3         | 37     | Java Memory Model                                    | Raúl                                         |
+| 3         | 37     | [Java Memory Model](week03/)                         | Raúl                                         |
 | 4         | 38     | Shared memory II                                     | Raúl                                         |
 | 5         | 39     | Testing & Verification                               | Raúl                                         |
 | 6         | 40     | Lock free data structures                            | Raúl                                         |
