@@ -3,9 +3,11 @@
 
 package exercises03;
 
-public class CountingThreads {
-  int count;
+import java.util.concurrent.locks.ReentrantLock;
 
+public class CountingThreads {
+  volatile int count;
+  ReentrantLock l = new ReentrantLock();
   public CountingThreads() throws InterruptedException {
     count = 0;
 
@@ -23,12 +25,20 @@ public class CountingThreads {
 
   public class CountingThread extends Thread {
     public void run() {
+      //l.lock();
       int temp = count;
+      try{
+        Thread.sleep(3000);
+      } catch (Exception e) {
+        System.out.println(e);
+     }
+
       count = temp + 1;
+      //l.unlock();
     }
   }
 
-
+  // gradle -PmainClass=exercises01.
   public static void main(String[] args) throws InterruptedException {
     new CountingThreads();
   }
