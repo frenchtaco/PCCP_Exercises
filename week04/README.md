@@ -10,6 +10,9 @@ The goals of this lecture are:
 
 ## Readings 
 
+* Pardo, Sestoft, Staunstrup:
+  * [The Java Memory Model](../concurrency-notes/pcpp_concurrency_4.pdf).
+
 * Goetz:
   * Chapter 3, Sections 3.4 and 3.5. *(it was part of the readings for week 2)*.
   * Chapter 4, complete.
