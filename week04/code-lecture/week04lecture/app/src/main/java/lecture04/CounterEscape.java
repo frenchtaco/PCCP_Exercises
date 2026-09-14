@@ -7,10 +7,10 @@ class CounterEscape {
     public CounterEscape() throws InterruptedException {
         Counter c = new Counter();
         Thread t1 = new Thread(() -> {
-                c.inc();
+            c.inc();
         });
         Thread t2 = new Thread(() -> {
-                c.i++; // escaped the lock in inc()
+            c.i++; // escaped the lock in inc()
         });
         t1.start();t2.start();
         t1.join();t2.join();

@@ -16,23 +16,23 @@ class TestUnsafeInitialization {
         int N = 10_000_000;
         for (int i = 0; i < N; i++) {
             Thread t1 = new Thread(() -> {
-                    // At this point u == null, either due to
-                    // initiliazation to default value or because the
-                    // write in line 44 happens-before this write (by
-                    // the thread termination and thread start rules)
-                    u = new UnsafeInitialization();
+                // At this point u == null, either due to
+                // initiliazation to default value or because the
+                // write in line 44 happens-before this write (by
+                // the thread termination and thread start rules)
+                u = new UnsafeInitialization();
             });
             Thread t2 = new Thread(() -> {
-                    // The `u` reads below and the write in line 24
-                    // are not ordered by happens-before
-                    if (!Objects.isNull(u) && u.readX()!=42)     
-                        System.out.println("x is not equal 42");
+                // The `u` reads below and the write in line 24
+                // are not ordered by happens-before
+                if (!Objects.isNull(u) && u.readX()!=42)     
+                    System.out.println("x is not equal 42");
             });
             Thread t3 = new Thread(() -> {
-                    // The `u` reads below and the write in line 24
-                    // are not ordered by happens-before
-                    if (!Objects.isNull(u) && Objects.isNull(u.readO())) 
-                        System.out.println("o is null");
+                // The `u` reads below and the write in line 24
+                // are not ordered by happens-before
+                if (!Objects.isNull(u) && Objects.isNull(u.readO())) 
+                    System.out.println("o is null");
             });
             t1.start();
             t2.start();

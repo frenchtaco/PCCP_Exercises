@@ -13,10 +13,10 @@ class AccessNoState {
             final C c = new C();
 
             Thread t1 = new Thread(() -> {
-                    l.add(1);
+                l.add(1);
             });
             Thread t2 = new Thread(() -> {
-                    c.n(l);
+                c.n(l);
             });
 
             t1.start();t2.start();

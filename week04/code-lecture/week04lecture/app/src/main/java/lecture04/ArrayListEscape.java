@@ -10,10 +10,10 @@ class ArrayListEscape {
     public ArrayListEscape() {
         IntArrayList array = new IntArrayList();
         new Thread(() -> {
-                array.set(0,1); // access shared state with lock
+            array.set(0,1); // access shared state with lock
         }).start();
         new Thread(() -> {
-                array.get().set(0,42); // access shared state without locks
+            array.get().set(0,42); // access shared state without locks
         }).start();
     }
 
