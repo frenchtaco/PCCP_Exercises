@@ -25,15 +25,18 @@ public class CountingThreads {
 
   public class CountingThread extends Thread {
     public void run() {
-      //l.lock();
-      int temp = count;
+      l.lock();
       try{
-        Thread.sleep(3000);
+
+        int temp = count;
+        count = temp + 1;
+
       } catch (Exception e) {
         System.out.println(e);
+     } finally {
+      l.unlock();
      }
-
-      count = temp + 1;
+      
       //l.unlock();
     }
   }
