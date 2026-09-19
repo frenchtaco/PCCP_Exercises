@@ -22,23 +22,23 @@ public class ReadersWritersSemaphore {
 
             // start a reader
             new Thread(() -> {
-                    m.readLock();
-                    try{semReaders.acquire();}catch(InterruptedException e){e.printStackTrace();System.exit(-1);}
-                    // Note that it always prints less than 6 readers (do not mind the printing order)
-                    System.out.println("There are " + noReaders.incrementAndGet() + " threads reading");
-                    // read
-                    semReaders.release();
-                    noReaders.decrementAndGet();
-                    m.readUnlock();
+                m.readLock();
+                try{semReaders.acquire();}catch(InterruptedException e){e.printStackTrace();System.exit(-1);}
+                // Note that it always prints less than 6 readers (do not mind the printing order)
+                System.out.println("There are " + noReaders.incrementAndGet() + " threads reading");
+                // read
+                semReaders.release();
+                noReaders.decrementAndGet();
+                m.readUnlock();
             }).start();
 
             // start a writer
             new Thread(() -> {
-                    m.writeLock();
-                    System.out.println("There are " + (noWriters++) + " threads writing");
-                    // write
-                    noWriters--;
-                    m.writeUnlock();
+                m.writeLock();
+                System.out.println("There are " + (noWriters++) + " threads writing");
+                // write
+                noWriters--;
+                m.writeUnlock();
             }).start();
 
         }

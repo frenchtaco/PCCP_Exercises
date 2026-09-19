@@ -39,7 +39,7 @@ class BarrierExample {
             try { cb.await(); } catch (InterruptedException|BrokenBarrierException e) { e.printStackTrace(); }
             // After this point the array is initialized and it is safe to read it (if you do not comment out the line above)
             System.out.println("Thread index " + index +
-                               " is printing, shared_array[" + (index+1)%parties +"]="+shared_array[(index+1)%parties]);
+                    " is printing, shared_array[" + (index+1)%parties +"]="+shared_array[(index+1)%parties]);
         }
     }
 }
