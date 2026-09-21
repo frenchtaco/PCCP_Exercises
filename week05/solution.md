@@ -1,4 +1,4 @@
-## Exercise 5) 
+## Exercise 5.1) 
 
 Note: Run tests using `$ gradle cleanTest test --tests <package>.<test_class>`
 
@@ -45,3 +45,21 @@ So, if a test fails, it tells us that the `add` and `remove` are not behaving th
 Even though tests are a way for us to look for thread-**un**safety, we cannot simply conlcude that thread-safety has occurred based on our tests cases, as we cannot ensure that all possible interleavings have been experimented with.
 
 But I guess we could conclude that mutual exclusion has been ensured via the `synchronized`keyword, and thus that `add` and `remove` access can only happen on at a time.
+
+---
+
+## Exercise 5.2) 
+
+## CALL HardKåre!!
+
+---
+### 5.1) Let capacity denote the final field capacity in SemaphoreImp. Then, the property above does not hold for SemaphoreImp. Your task is to provide an interleaving showing a counterexample of the property, and explain why the interleaving violates the property
+---
+
+I suppose that while the capacity, c, is final, there is nothing that stops our state from becoming lesser than. This is highlighted via our test, where we provoke, granted, a dual release to see if the state will go amock, which it did.
+
+---
+### 5.2) Write a functional correctness test that can trigger the interleaving you describe in 1. Explain why your test triggers the interlaving
+---
+
+Honestly, I think this test is wrong, and need to sit with Kåre and stare at it.
