@@ -19,7 +19,7 @@ Each week we will update this repository with the material used in this week.
 | 3         | 37     | [Java Memory Model](week03/)                         | Raúl                                         |
 | 4         | 38     | [Shared memory II](week04/)                          | Raúl                                         |
 | 5         | 39     | [Testing & Verification](week05/)                    | Raúl                                         |
-| 6         | 40     | Lock free data structures                            | Raúl                                         |
+| 6         | 40     | [Lock free data structures](week06/)                 | Raúl                                         |
 | 7         | 41     | Linearizability                                      | Raúl                                         |
 |           | 42     | *No Lecture: Fall break*                             | --                                           |
 | 8         | 43     | Performance measurements                             | Peter                                        |
