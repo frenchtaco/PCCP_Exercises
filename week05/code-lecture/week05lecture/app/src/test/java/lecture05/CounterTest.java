@@ -40,8 +40,8 @@ public class CounterTest {
 
     @BeforeEach
     public void initialize() {
-        count = new CounterDR();
-        // count = new CounterSync();
+        // count = new CounterDR();
+        count = new CounterSync();
         // count = new CounterAto();
     }
 
