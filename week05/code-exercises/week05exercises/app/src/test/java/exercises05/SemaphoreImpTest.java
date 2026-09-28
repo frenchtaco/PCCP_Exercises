@@ -28,7 +28,7 @@ public class SemaphoreImpTest {
     @BeforeEach
     public void initialize() {
         noThreads = 1000; 
-        barrier = new CyclicBarrier(noThreads+1); //init the main thread first
+        barrier = new CyclicBarrier(noThreads); //init the main thread first
         
         c = 5;
 
@@ -42,7 +42,7 @@ public class SemaphoreImpTest {
 
 
     @RepeatedTest(100)
-    @DisplayName("Test capacity below c")
+    @DisplayName("Test capacity above 0")
     public void testSemp() throws Exception {
 
         threads = new Thread[noThreads];
@@ -60,7 +60,7 @@ public class SemaphoreImpTest {
             });
             threads[i].start();
         }
-        barrier.await();
+        // barrier.await();
         for(Thread t: threads){
             t.join();
         }
@@ -70,7 +70,7 @@ public class SemaphoreImpTest {
     }
 
     @RepeatedTest(100)
-    @DisplayName("Test capacity above c")
+    @DisplayName("Test capacity below c")
     public void testSemp2() throws Exception {
 
         threads = new Thread[noThreads];
@@ -79,6 +79,7 @@ public class SemaphoreImpTest {
 
                 try{
                     barrier.await();
+                    // semp.acquire(); results in deadlock as expected :(
                     semp.acquire();
                     semp.release();
          
@@ -94,6 +95,6 @@ public class SemaphoreImpTest {
         }
         int state = semp.getState();
 
-        assertTrue(state <= c, "we wanted state <= 5, but got: " + state);
+        assertTrue(state <= c, "we wanted state <= " + c + ", but got: " + state);
     }
 }

@@ -1,4 +1,4 @@
-// For week 6
+/* // For week 6
 // raup@itu.dk * 2024-09-22
 
 package exercises06;
@@ -51,3 +51,4 @@ class ReadWriteCASLock implements SimpleRWTryLockInterface {
 
     }
 }
+ */

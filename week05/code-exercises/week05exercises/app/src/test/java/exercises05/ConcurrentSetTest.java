@@ -14,7 +14,7 @@ public class ConcurrentSetTest {
     // Variable with set under test
     private ConcurrentIntegerSet set;
     CyclicBarrier barrier; 
-    int noThreads; 
+    int nrThreads; 
     Thread[] threads;
 
     // TODO: Very likely you should add more variables here
@@ -25,8 +25,8 @@ public class ConcurrentSetTest {
     // Remember that @BeforeEach is executed before each test
     @BeforeEach
     public void initialize() {
-        noThreads = 1000; 
-        barrier = new CyclicBarrier(noThreads+1); //init the main thread first
+        nrThreads = 1000; 
+        barrier = new CyclicBarrier(nrThreads); //init the main thread first
         
         // init set
         //set = new ConcurrentIntegerSetBuggy();
@@ -41,9 +41,9 @@ public class ConcurrentSetTest {
     @DisplayName("Test add function")
     public void testAdd() throws Exception {
         
-        threads = new Thread[noThreads];
+        threads = new Thread[nrThreads];
 
-        for(int i = 0; i < noThreads; i++){
+        for(int i = 0; i < nrThreads; i++){
             final int value = i; 
             threads[i] = new Thread(() -> {
                 try {
@@ -54,21 +54,21 @@ public class ConcurrentSetTest {
             threads[i].start();
 
         }
-        barrier.await();
+        // barrier.await();
 
         for(Thread t: threads){
             t.join();
         }
 
-        assertEquals(noThreads, set.size());
+        assertEquals(nrThreads, set.size());
     }
 
     @RepeatedTest(100)
     @DisplayName("Test remove function")
     public void testRemove() throws Exception {
 
-        threads = new Thread[noThreads];
-        for(int i = 0; i < noThreads; i++){
+        threads = new Thread[nrThreads];
+        for(int i = 0; i < nrThreads; i++){
             final int value = i;
             threads[i] = new Thread(() -> {
 
@@ -82,7 +82,7 @@ public class ConcurrentSetTest {
             });
             threads[i].start();
         }
-        barrier.await();
+        // barrier.await();
         for(Thread t: threads){
             t.join();
         }

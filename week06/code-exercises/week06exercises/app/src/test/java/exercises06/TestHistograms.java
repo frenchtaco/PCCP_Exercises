@@ -2,16 +2,65 @@
 // raup@itu.dk * 2026-09-23
 
 package exercises06;
-
-// Very likely you will need some imports here
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.RepeatedTest;
+import java.util.concurrent.CyclicBarrier;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestHistograms {
-    // The imports above are just for convenience, feel free add or remove imports
+    CasHistogram casHist;
+    Histogram hist2;
+    CyclicBarrier barrier;
+    int noThreads;
+    Thread[] threads;
 
-    // TODO: 6.1.3
+    @BeforeEach
+    public void initialize() {
+        noThreads = 5000; 
+        int c = 5000;
+        barrier = new CyclicBarrier(noThreads);
+        casHist = new CasHistogram(c);
+        hist2 = new Histogram1(c);
+    }
+
+
+    @RepeatedTest(100)
+    @DisplayName("Bullshit testphase")
+    public void testHisto() throws Exception {
+
+        threads = new Thread[noThreads];
+        for(int i = 0; i < noThreads; i++){
+            final int value = i;
+            threads[i] = new Thread(() -> {
+                try {
+                    barrier.await();
+                    casHist.increment(countFactors(value));
+                    //hist2.increment(countFactors(value));
 
 
 
+
+                } catch (Exception e) { System.out.println(e); }
+                
+            });
+            threads[i].start();
+        }
+
+        for(Thread t: threads){
+            t.join();
+        }
+
+        Histogram1 hist = new Histogram1(noThreads);
+        for (int i = 0; i < noThreads; i++) {
+            hist.increment(countFactors(i));
+        }
+
+        for (int i = 0; i < noThreads; i++) {
+            assertEquals(casHist.getCount(i), hist.getCount(i));
+        }
+        
+    }
 
 
     // Function to count the number of prime factors of a number `p`
