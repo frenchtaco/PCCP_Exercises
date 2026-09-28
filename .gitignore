@@ -6,3 +6,5 @@ out/
 .vscode/
 .DS_*
 .DS_Store
+
+.fake
