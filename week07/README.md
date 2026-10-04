@@ -11,7 +11,7 @@ The goals of this lecture are:
 ## Readings
 
 * Pardo, Sestoft, Staunstrup:
-  * [Linearizability (To appear)](../concurrency-notes/pcpp_concurrency_7.pdf).
+  * [Linearizability](../concurrency-notes/pcpp_concurrency_7.pdf).
 
 * Leslie Lamport. [How to Make a Multiprocessor Computer That Correctly Executes Multiprocess Programs](https://www.microsoft.com/en-us/research/uploads/prod/2016/12/How-to-Make-a-Multiprocessor-Computer-That-Correctly-Executes-Multiprocess-Programs.pdf). IEEE Transactions on Computers C-28. 1979.
   * This paper introduces sequential consistency.
