@@ -38,9 +38,6 @@ public class TestHistograms {
                     casHist.increment(countFactors(value));
                     //hist2.increment(countFactors(value));
 
-
-
-
                 } catch (Exception e) { System.out.println(e); }
                 
             });
@@ -59,7 +56,6 @@ public class TestHistograms {
         for (int i = 0; i < noThreads; i++) {
             assertEquals(casHist.getCount(i), hist.getCount(i));
         }
-        
     }
 
 

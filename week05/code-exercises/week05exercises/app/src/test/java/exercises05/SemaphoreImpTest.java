@@ -36,10 +36,7 @@ public class SemaphoreImpTest {
         //set = new ConcurrentIntegerSetBuggy();
         //set = new ConcurrentIntegerSetSync();
         semp = new SemaphoreImp(c);
-        
-       
     }
-
 
     @RepeatedTest(100)
     @DisplayName("Test capacity above 0")
@@ -83,7 +80,6 @@ public class SemaphoreImpTest {
                     semp.acquire();
                     semp.release();
          
-
                 } catch (Exception e) { System.out.println(e); }
             
             });

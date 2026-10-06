@@ -12,10 +12,9 @@ class SimpleRWTryLock implements SimpleRWTryLockInterface {
     boolean writer;
     
 
-    // TODO: Add necessary field(s) for the class
 
     public boolean readerTryLock() {
-        // TODO 6.2.3
+        
         final Thread current = Thread.currentThread();
         Holders currentHolder;
         Holders newHolder; 
@@ -42,7 +41,6 @@ class SimpleRWTryLock implements SimpleRWTryLockInterface {
         final Thread current = Thread.currentThread();
         Holders currentHolder;
         Holders newHolder; 
-        
         
             do {
                 currentHolder = holders.get();
@@ -114,7 +112,6 @@ class SimpleRWTryLock implements SimpleRWTryLockInterface {
         private final ReaderList next;
 
 
-        // TODO: Constructor
         public ReaderList(Thread t, ReaderList next){
             this.thread = t;
             this.next = next; 
@@ -135,7 +132,6 @@ class SimpleRWTryLock implements SimpleRWTryLockInterface {
             return this.thread;
         }
 
-        // TODO: remove
         public ReaderList remove(Thread t){
             if (this.thread == t) { // Handles remove head case
                 if (this.next == null) { // If head is only element
@@ -172,7 +168,6 @@ class SimpleRWTryLock implements SimpleRWTryLockInterface {
     private static class Writer extends Holders {
         public final Thread thread;
 
-        // TODO: Constructor
         public Writer(Thread t){
             this.thread = t; 
         }
