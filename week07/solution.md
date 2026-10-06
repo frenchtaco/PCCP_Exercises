@@ -84,10 +84,10 @@ Since is it nos SC, it is not linearizable.
 
 ---
 
-## Exercise 7.1
+## Exercise 7.2
 
 ---
-#### 7.1.1) Define linearization points for the push and pop methods in the Treiber Stack code provided in app/src/ main/java/exercises07/LockFreeStack.java. Explain why those linearization points show that the implementation of the Treiber Stack is linearizable
+#### 7.2.1) Define linearization points for the push and pop methods in the Treiber Stack code provided in app/src/ main/java/exercises07/LockFreeStack.java. Explain why those linearization points show that the implementation of the Treiber Stack is linearizable
 
 We have set our linearization points at the `oldHead = top.get();`and the `CAS-operation` in both methods, meaning that there is an interleaving that:
 1) Does not break program order (as there is none in our example), and 
@@ -101,11 +101,24 @@ We have set our linearization points at the `oldHead = top.get();`and the `CAS-o
 
 
 ---
-#### 7.1.2) Write a JUnit functional correctness test for the push method of the Treiber Stack. Consider a stack of integers. The test must assert that after n threads push integers x1, x2, . . . , xn, respectively, the total sum of the elements in the stack equalsn i=1 xi. Write your test in the test skeleton file app/src/test/java/ exercises07/TestLockFreeStack.java
+#### 7.2.2) Write a JUnit functional correctness test for the push method of the Treiber Stack. Consider a stack of integers. The test must assert that after n threads push integers x1, x2, . . . , xn, respectively, the total sum of the elements in the stack equalsn i=1 xi. Write your test in the test skeleton file app/src/test/java/ exercises07/TestLockFreeStack.java
 ---
 See the TestLockFreeStack.java
 
 ---
-#### 7.1.3) Write a JUnit functional correctness test for the pop method of the Treiber Stack. As before, consider a stack of integers. Given a stack with n elements x1, x2, . . . , xn already pushed, the test must assert the following: after n threads pop one element yi each, the sum of popped elements equals the sum of elements originally in the stackn i=1 xi = n i=1 yi. Write your test in the test skeleton file app/src/test/java/ exercises07/TestLockFreeStack.java.
+#### 7.2.3) Write a JUnit functional correctness test for the pop method of the Treiber Stack. As before, consider a stack of integers. Given a stack with n elements x1, x2, . . . , xn already pushed, the test must assert the following: after n threads pop one element yi each, the sum of popped elements equals the sum of elements originally in the stackn i=1 xi = n i=1 yi. Write your test in the test skeleton file app/src/test/java/ exercises07/TestLockFreeStack.java.
 ---
 See the TestLockFreeStack.java
+
+---
+#### 7.2.4) Do the tests in part 2. and 3. cover all linearization points in the Treiber Stack? Explain your answer. If you answered that not all linearization points were covered, then add additional concurrent functional tests to cover all linearization points.
+---
+We have tested for non-empty `push`and `pop`, but not for empty `pop`, which is one of our linearization points.
+- see file for the added test
+---
+
+## Exercise 7.3
+
+---
+#### 7.3.1) Consider the reader-writer locks exercise from week 6. There are four methods included in this type of locks: writerTryLock, writerUnlock, readerTryLock and readerUnlock. State, for each method, whether they are wait-free, lock-free or obstruction-free and explain your answers.
+
