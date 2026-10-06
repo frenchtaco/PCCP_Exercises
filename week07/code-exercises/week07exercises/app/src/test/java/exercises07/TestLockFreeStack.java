@@ -1,13 +1,83 @@
 // raup@itu.dk * 2023-10-20
 package exercises07;
 
-// Very likely you will need some imports here
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.RepeatedTest;
+import java.util.concurrent.CyclicBarrier;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class TestLockFreeStack {
+public class TestLockFreeStack {
+    LockFreeStack<Integer> stack;
+    CyclicBarrier barrier;
+    int noThreads;
+    Thread[] threads;
 
-    // The imports above are just for convenience, feel free add or remove imports
+    @BeforeEach
+    public void initialize() {
+        noThreads = 1000; 
+        barrier = new CyclicBarrier(noThreads);
+        stack = new LockFreeStack<Integer>();
+    }
 
-    // TODO: 7.2.2 - Test push
+    @RepeatedTest(100)
+    @DisplayName("Test sum of push")
+    public void testPush() throws Exception {
 
-    // TODO: 7.2.3 - Test pop
+        threads = new Thread[noThreads];
+        for(int i = 0; i < noThreads; i++){
+            final int value = 1;
+            threads[i] = new Thread(() -> {
+                try {
+                    barrier.await();
+                    stack.push(value);
+
+                } catch (Exception e) { System.out.println(e); }
+                
+            });
+            threads[i].start();
+        }
+
+        for(Thread t: threads){
+            t.join();
+        }
+
+        assertEquals(stack.size(), noThreads);
+        
+    }
+
+
+    @RepeatedTest(100)
+    @DisplayName("Test sum of pop")
+    public void testPop() throws Exception {
+
+        threads = new Thread[noThreads];
+        int[] pop_arr = new int[noThreads];
+
+        for(int i = 0; i < noThreads; i++){
+            final int value = 1;
+            final int idx = i;
+            threads[i] = new Thread(() -> {
+                try {
+                    
+                    stack.push(value);
+                    barrier.await();
+                    pop_arr[idx] = stack.pop();
+                } catch (Exception e) { System.out.println(e); }
+                
+            });
+            threads[i].start();
+        }
+
+        for(Thread t: threads){
+            t.join();
+        }
+
+        int sum = 0;
+        for(int i = 0; i < noThreads; i++) {
+            sum += pop_arr[i];
+        }
+        assertEquals(sum, noThreads);
+        
+    }
 }

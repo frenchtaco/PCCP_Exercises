@@ -64,7 +64,7 @@ and for linearizability:
 
 Program order is not an issue since there's only one execution per thread. The specification will not be broken either, seeing as we can create a projection wherein `q.enc(x)` happens before `q.deq(x)`.
 
-Finally, we can make it linearizable, as program-order will not break it, and thus:
+Finally, we can make it linearizable, as the two previous requirements will not be violated when real-time ordering is introduced (along with linearization points for the method calls that overlap):
 `<q.enc(x), q.deq(x)>`
 
 ---
@@ -74,7 +74,7 @@ Finally, we can make it linearizable, as program-order will not break it, and th
 **Execution**: 
 
     A: ---|q.enq(x)|-----|q.enq(y)|-->
-    B: --| q.deq(y) |->
+    B: --|       q.deq(y)         |-->
 
 **Answer**
 
@@ -82,4 +82,30 @@ This is NOT sequentially consistent, as a projection such as `q.enc(x), q.enc(y)
 
 Since is it nos SC, it is not linearizable.
 
+---
 
+## Exercise 7.1
+
+---
+#### 7.1.1) Define linearization points for the push and pop methods in the Treiber Stack code provided in app/src/ main/java/exercises07/LockFreeStack.java. Explain why those linearization points show that the implementation of the Treiber Stack is linearizable
+
+We have set our linearization points at the `oldHead = top.get();`and the `CAS-operation` in both methods, meaning that there is an interleaving that:
+1) Does not break program order (as there is none in our example), and 
+2) Does not break the specification of the stack, and 
+3) Has real-timer ordering with linearization points that overlap
+
+
+    A: ---|    q.push(x)  |------->
+    -----------|  ------|
+    B: -------|    q.pop(x) |---->
+
+
+---
+#### 7.1.2) Write a JUnit functional correctness test for the push method of the Treiber Stack. Consider a stack of integers. The test must assert that after n threads push integers x1, x2, . . . , xn, respectively, the total sum of the elements in the stack equalsn i=1 xi. Write your test in the test skeleton file app/src/test/java/ exercises07/TestLockFreeStack.java
+---
+See the TestLockFreeStack.java
+
+---
+#### 7.1.3) Write a JUnit functional correctness test for the pop method of the Treiber Stack. As before, consider a stack of integers. Given a stack with n elements x1, x2, . . . , xn already pushed, the test must assert the following: after n threads pop one element yi each, the sum of popped elements equals the sum of elements originally in the stackn i=1 xi = n i=1 yi. Write your test in the test skeleton file app/src/test/java/ exercises07/TestLockFreeStack.java.
+---
+See the TestLockFreeStack.java
