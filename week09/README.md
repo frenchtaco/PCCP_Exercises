@@ -1,44 +1,34 @@
-# Lecture 9: Performance measurements
+# Lecture 9: Performance and Scalability
+
+Monday 26 October 2026
+
 
 ## Goals
 
 The goals of this lecture are:
-
-* Motivate the need for performance measurements, or benchmarking.
-* Enable you to perform performance measurements of your own code.
-* Enable you to a measure the performance of a number of Java
-  constructs, including object creation; thread creation, start and
-  termination; sequential and parallel computation of prime numbers;
-  memory hierarchy access times.
-* Introduce the concept of virtual threads (since Java 21) and the
-  distinction between platform threads and virtual threads.
+* To be able to use platform threads, virtual threads and Java's
+  executor framework and futures
+* To describe key obstacles to performance and scalability on shared
+  memory multi-core computers
+* To describe and use techniques to improve performance, such as lock
+  striping, better cache usage, avoidance of false sharing, as
+  illustrated through case studies of concurrent data structures and algorithms
 
 
-## Readings 
+## Readings (TO BE UPDATED)
 
-* The note by Peter Sestoft: [Microbenchmarks in Java, C# and
-  C
-  (PDF)](https://github.itu.dk/PCPP/PCPP2026-Public/blob/main/week09/benchmarking.pdf)
-  and various 
-  [Supporting
-  files](https://raspi.itu.dk/people/sestoft/benchmarking/).  You may
-  skip sections 5, 6, 12, 13.
-* Java library [Thread class
-  documentation](https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/Thread.html)
-* Java [virtual threads overview](https://docs.oracle.com/en/java/javase/26/core/virtual-threads.html)
+* Goetz Chapter 5, 6.2, 6.3 (up to 6.3.4), and  11 
+* [Java documentation of Executors: ] ( https://docs.oracle.com/javase/tutorial/essential/concurrency/executors.html) including the three subsections (Executor Interfaces, Thread Pools and Fork/Join).
+* Pardo, Sestoft, Staunstrup: 
+ * The computer's CPU and RAM
+ * Scalability case studies
+* [Java documentation of ConcurrentHashMap: ] (   https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ConcurrentHashMap.html)
 
-
-## To do before lecture 9 (NOT UPDATED)
-
-* make sure you have a local copy (on your computer) of  `code-exercises` (same folder as this file)
-* test that you can run ` measurement.java ` (in this subdirectory ` week09/code-exercises/Week09exercises/app/src/main/java/exercises09 `)
-for example by executing:
-
- ` gradle -PmainClass=exercises09.Measurement run `
 
 
 ## Lecture slides (TO APPEAR)
-[lecture09.pdf]()
+
+[lecture09.pdf ]()
 
 
 ## Exercises (TO APPEAR)
