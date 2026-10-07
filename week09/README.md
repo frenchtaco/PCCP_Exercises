@@ -4,13 +4,14 @@
 
 The goals of this lecture are:
 
-* Motivate the need for performance measurements, or benchmarking
-* Enable you to perform performance measurements of your own code
+* Motivate the need for performance measurements, or benchmarking.
+* Enable you to perform performance measurements of your own code.
 * Enable you to a measure the performance of a number of Java
-  constructs, including: object creation, thread creation, a simple
-  algorithm for computing prime numbers, 
+  constructs, including object creation; thread creation, start and
+  termination; sequential and parallel computation of prime numbers;
+  memory hierarchy access times.
 * Introduce the concept of virtual threads (since Java 21) and the
-  distinction between platform threads and virtual threads
+  distinction between platform threads and virtual threads.
 
 
 ## Readings 
