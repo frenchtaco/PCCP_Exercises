@@ -18,11 +18,11 @@ The goals of this lecture are:
 ## Readings (TO BE UPDATED)
 
 * Goetz Chapter 5, 6.2, 6.3 (up to 6.3.4), and  11 
-* [Java documentation of Executors: ] ( https://docs.oracle.com/javase/tutorial/essential/concurrency/executors.html) including the three subsections (Executor Interfaces, Thread Pools and Fork/Join).
+* [Java documentation of Executors](https://docs.oracle.com/javase/tutorial/essential/concurrency/executors.html) including the three subsections (Executor Interfaces, Thread Pools and Fork/Join).
 * Pardo, Sestoft, Staunstrup: 
  * The computer's CPU and RAM
  * Scalability case studies
-* [Java documentation of ConcurrentHashMap: ] (   https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ConcurrentHashMap.html)
+* [Java documentation of ConcurrentHashMap](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ConcurrentHashMap.html)
 
 
 

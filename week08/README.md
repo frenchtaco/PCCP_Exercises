@@ -23,12 +23,11 @@ The goals of this lecture are:
 * Peter Sestoft: [Microbenchmarks in Java, C# and C (PDF)](benchmarking.pdf)
   and [Supporting files](https://raspi.itu.dk/people/sestoft/benchmarking/).  You may
   skip sections 5, 6, 12, 13.
-* Java library [Thread class
-  documentation](https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/Thread.html)
+* Java library [Thread class documentation](https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/Thread.html)
 * Java [virtual threads overview](https://docs.oracle.com/en/java/javase/26/core/virtual-threads.html)
 
 
-## To do before lecture 9 (NOT UPDATED)
+## To do before lecture 8 (NOT UPDATED)
 
 * make sure you have a local copy (on your computer) of  `code-exercises` (same folder as this file)
 * test that you can run ` measurement.java ` (in this subdirectory ` week09/code-exercises/Week09exercises/app/src/main/java/exercises09 `)
