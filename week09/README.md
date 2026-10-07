@@ -16,7 +16,9 @@ The goals of this lecture are:
 ## Readings 
 
 * The note by Peter Sestoft: [Microbenchmarks in Java, C# and
-  C (PDF)](https://raspi.itu.dk/people/sestoft/papers/benchmarking.pdf) and
+  C
+  (PDF)](https://github.itu.dk/PCPP/PCPP2026-Public/blob/main/week09/benchmarking.pdf)
+  and various 
   [Supporting
   files](https://raspi.itu.dk/people/sestoft/benchmarking/).  You may
   skip sections 5, 6, 12, 13.
