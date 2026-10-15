@@ -22,7 +22,7 @@ The goals of this lecture are:
 
 * Peter Sestoft: [Microbenchmarks in Java, C# and C (PDF)](benchmarking.pdf)
   and [Supporting files](https://raspi.itu.dk/people/sestoft/benchmarking/).  You may
-  skip sections 5, 6, 12, 13.
+  skip sections 5, 6, 8, 12, 13.
 * Java library [Thread class documentation](https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/Thread.html)
 * Java [virtual threads overview](https://docs.oracle.com/en/java/javase/26/core/virtual-threads.html)
 
