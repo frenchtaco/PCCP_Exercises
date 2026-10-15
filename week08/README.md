@@ -23,6 +23,10 @@ The goals of this lecture are:
 * Peter Sestoft: [Microbenchmarks in Java, C# and C (PDF)](benchmarking.pdf)
   and [Supporting files](https://raspi.itu.dk/people/sestoft/benchmarking/).  You may
   skip sections 5, 6, 8, 12, 13.
+* Pardo, Sestoft, Staunstrup: 
+  * [Scalability case
+    studies](https://github.itu.dk/PCPP/PCPP2026-Public/blob/main/week09/pcppbook-ch9-scalability-20261015.pdf)
+    only section 9.1: Platform threads, virtual threads and futures
 * Java library [Thread class documentation](https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/lang/Thread.html)
 * Java [virtual threads overview](https://docs.oracle.com/en/java/javase/26/core/virtual-threads.html)
 

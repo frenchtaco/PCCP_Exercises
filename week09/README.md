@@ -16,14 +16,14 @@ The goals of this lecture are:
   data structures and algorithms
 
 
-## Readings (TO BE UPDATED)
+## Readings
 
 * Goetz Chapter 5, 6.2, 6.3 (up to 6.3.4), and  11 
-* [Java documentation of Executors](https://docs.oracle.com/javase/tutorial/essential/concurrency/executors.html) including the three subsections (Executor Interfaces, Thread Pools and Fork/Join).
 * Pardo, Sestoft, Staunstrup: 
   * [The computer's CPU and RAM](pcppbook-ch8-cpu-ram-20261015.pdf)
   * [Scalability case studies](pcppbook-ch9-scalability-20261015.pdf)
     sections 9.1, 9.2 and 9.3 (the latter only cursory)
+* [Java documentation of Executors](https://docs.oracle.com/javase/tutorial/essential/concurrency/executors.html) including the three subsections Executor Interfaces, Thread Pools and Fork/Join
 * [Java documentation of ConcurrentHashMap](https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/util/concurrent/ConcurrentHashMap.html)
 
 
