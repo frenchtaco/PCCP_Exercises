@@ -31,16 +31,15 @@ The goals of this lecture are:
 * Java [virtual threads overview](https://docs.oracle.com/en/java/javase/26/core/virtual-threads.html)
 
 
-## To do before lecture 8 (NOT UPDATED)
+## To do before lecture 8
 
 * make sure you have a local copy (on your computer) of `code-exercises` (same folder as this file)
-* ...
 
 
 ## Lecture slides (TO APPEAR)
 [lecture08.pdf]()
 
 
-## Exercises (TO APPEAR)
+## Exercises
 
 [exercises08.pdf]()
