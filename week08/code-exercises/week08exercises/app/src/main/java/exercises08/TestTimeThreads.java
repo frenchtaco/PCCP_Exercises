@@ -5,6 +5,7 @@
 // Microbenchmarks for small object creation, Thread creation
 // (platform and virtual), thread start, thread execution and join,
 // taking an uncontended lock.
+package exercises08;
 
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.LongToDoubleFunction;

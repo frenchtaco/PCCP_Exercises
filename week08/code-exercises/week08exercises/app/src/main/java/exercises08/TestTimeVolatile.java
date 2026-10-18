@@ -1,6 +1,7 @@
 // PCPP 
 
 // sestoft@itu.dk * 2026-10-15
+package exercises08;
 
 import java.util.function.LongToDoubleFunction;
 

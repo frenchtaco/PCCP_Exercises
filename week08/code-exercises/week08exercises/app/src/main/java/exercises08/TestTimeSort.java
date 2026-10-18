@@ -6,7 +6,7 @@
 //   java TestTimeSort
 // or, to check sortedness of the results:
 //   java -enableassertions TestTimeSort
-
+package exercises08;
  
 import java.util.Arrays;
 import java.util.function.LongToDoubleFunction;
