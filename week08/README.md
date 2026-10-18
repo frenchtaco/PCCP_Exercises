@@ -33,7 +33,10 @@ The goals of this lecture are:
 
 ## To do before lecture 8
 
-* make sure you have a local copy (on your computer) of `code-exercises` (same folder as this file)
+* make sure you have a local copy on your computer of `code-exercises`
+  (from same directory as this file)
+* make sure that you can execute `gradle -PmainClass=exercises08.Benchmark
+  run` in directory `week08/code-exercises/week08exercises` on your computer
 
 
 ## Lecture slides (TO APPEAR)
