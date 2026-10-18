@@ -42,4 +42,4 @@ The goals of this lecture are:
 
 ## Exercises
 
-[exercises08.pdf]()
+[exercises08.pdf](exercises08.pdf)
