@@ -33,11 +33,8 @@ The goals of this lecture are:
 
 ## To do before lecture 8 (NOT UPDATED)
 
-* make sure you have a local copy (on your computer) of  `code-exercises` (same folder as this file)
-* test that you can run ` measurement.java ` (in this subdirectory ` week09/code-exercises/Week09exercises/app/src/main/java/exercises09 `)
-for example by executing:
-
- ` gradle -PmainClass=exercises09.Measurement run `
+* make sure you have a local copy (on your computer) of `code-exercises` (same folder as this file)
+* ...
 
 
 ## Lecture slides (TO APPEAR)
