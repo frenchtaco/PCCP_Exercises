@@ -21,8 +21,8 @@ The goals of this lecture are:
 ## Readings 
 
 * Peter Sestoft: [Microbenchmarks in Java, C# and C (PDF)](benchmarking.pdf)
-  and [Supporting files](https://raspi.itu.dk/people/sestoft/benchmarking/).  You may
-  skip sections 5, 6, 8, 12, 13.
+  and [Supporting
+  files](https://raspi.itu.dk/people/sestoft/benchmarking/), sections 1-4, 7, 9-11.
 * Pardo, Sestoft, Staunstrup: 
   * [Scalability case
     studies](https://github.itu.dk/PCPP/PCPP2026-Public/blob/main/week09/pcppbook-ch9-scalability-20261015.pdf)
