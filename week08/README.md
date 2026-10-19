@@ -40,7 +40,7 @@ The goals of this lecture are:
 
 
 ## Lecture slides
-[lecture08.pdf](lecture08.pdf)
+[lecture08.pdf](lecture08.pdf) - updated code on slides 29-33
 
 
 ## Exercises
