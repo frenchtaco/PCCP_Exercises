@@ -45,4 +45,5 @@ The goals of this lecture are:
 
 ## Exercises
 
-[exercises08.pdf](exercises08.pdf)
+[exercises08.pdf](exercises08.pdf) - updated to remove stray
+"Challenging" header
