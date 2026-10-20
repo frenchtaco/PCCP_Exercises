@@ -18,7 +18,7 @@ The goals of this lecture are:
 
 ## Readings
 
-* Goetz Chapter 5, 6.2, 6.3 (up to 6.3.4), and  11 
+* Goetz Chapter 5 (already covered in week 4), 6.1, 6.2, and  11 
 * Pardo, Sestoft, Staunstrup: 
   * [The computer's CPU and RAM](pcppbook-ch8-cpu-ram-20261015.pdf)
   * [Scalability case studies](pcppbook-ch9-scalability-20261015.pdf)
