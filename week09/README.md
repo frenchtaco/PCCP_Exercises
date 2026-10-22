@@ -27,11 +27,20 @@ The goals of this lecture are:
 * [Java documentation of ConcurrentHashMap](https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/util/concurrent/ConcurrentHashMap.html)
 
 
+## To do before lecture 9
+
+* make sure you have a local copy on your computer of `code-exercises`
+  (from same directory as this file)
+* make sure that you can execute `gradle -PmainClass=exercises09.TestCountPrimesThreads
+  run` in directory `code-exercises/week09exercises` on your computer to perform
+  performance measurement from the command line, not inside an IDE
+
+
 ## Lecture slides (TO APPEAR)
 
 [lecture09.pdf ]()
 
 
-## Exercises (TO APPEAR)
+## Exercises
 
-[exercises09.pdf]()
+[exercises09.pdf](exercises09.pdf)
