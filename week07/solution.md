@@ -43,8 +43,6 @@ Here, the specification conflicts with the real-time ordering requirement from l
 
 Thus, this is NOT linearizable.
 
-Ps. it is not possible to make linearization points in a way where the method calls overlap, i.e. NOT linerizable
-
 ---
 #### 7.1.3) Is this execution linearizable? If so, provide a linearization that satisfies the standard specification of a sequential FIFO queue. Otherwise, explain why it is not linearizable.
 ---
@@ -78,9 +76,9 @@ Finally, we can make it linearizable, as the two previous requirements will not 
 
 **Answer**
 
-This is NOT sequentially consistent, as a projection such as `q.enc(x), q.enc(y), q.deq(y)` would break the specification, as a queue dequeues from the head.
+This is NOT sequentially consistent, as there is no way that dequeue would output y, when the first element enqueued was x. As this is FIFO, the dequeue should have outputtet x for this to be sequentially consistent
 
-Since is it nos SC, it is not linearizable.
+Since is it nos sequentially consistent, it is not linearizable.
 
 ---
 
@@ -96,7 +94,7 @@ We have set our linearization points at the `oldHead = top.get();`and the `CAS-o
 
 
     A: ---|    q.push(x)  |------->
-    -----------|  ------|
+    ,-----------|  ------|
     B: -------|    q.pop(x) |---->
 
 

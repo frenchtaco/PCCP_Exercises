@@ -20,6 +20,17 @@ public class TestLockFreeStack {
         stack = new LockFreeStack<Integer>();
     }
 
+	private static int expectedSum(int n) {
+        return n * (n + 1) / 2;
+    }
+
+	private int drainSum() {
+        int sum = 0;
+        Integer v;
+        while ((v = stack.pop()) != null) sum += v;
+        return sum;
+    }
+
     @RepeatedTest(100)
     @DisplayName("Test sum of push")
     public void testPush() throws Exception {
@@ -42,8 +53,8 @@ public class TestLockFreeStack {
             t.join();
         }
 
-        assertEquals(stack.size(), noThreads);
-        
+        assertEquals(noThreads, stack.size());
+        assertEquals(expectedSum(noThreads), drainSum());
     }
 
 
