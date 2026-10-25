@@ -120,3 +120,10 @@ We have tested for non-empty `push`and `pop`, but not for empty `pop`, which is 
 ---
 #### 7.3.1) Consider the reader-writer locks exercise from week 6. There are four methods included in this type of locks: writerTryLock, writerUnlock, readerTryLock and readerUnlock. State, for each method, whether they are wait-free, lock-free or obstruction-free and explain your answers.
 
+readerTryLock: Lock-free as some thread can run indefinitely if it keeps "losing" to the other threads when trying to commit it's change. Some thread will however always be able to finish. If writer is active, one might argue that it's, in that specific case, wait-free (probably wrong tho).
+
+readerUnlock: Same as above. 
+
+writerTryLock: wait-free. Doesn't mean it gets to do what it wants, but it will almost terminate freely
+
+writerUnlock: wait-free. Same as above

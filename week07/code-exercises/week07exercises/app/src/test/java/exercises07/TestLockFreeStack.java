@@ -24,7 +24,7 @@ public class TestLockFreeStack {
         return n * (n + 1) / 2;
     }
 
-	private int drainSum() {
+	private int stackSum() {
         int sum = 0;
         Integer v;
         while ((v = stack.pop()) != null) sum += v;
@@ -54,7 +54,7 @@ public class TestLockFreeStack {
         }
 
         assertEquals(noThreads, stack.size());
-        assertEquals(expectedSum(noThreads), drainSum());
+        assertEquals(noThreads, stackSum());
     }
 
 
@@ -65,13 +65,14 @@ public class TestLockFreeStack {
         threads = new Thread[noThreads];
         int[] pop_arr = new int[noThreads];
 
+        for(int i = 0; i < noThreads; i++) {
+            stack.push(i + 1);
+        }
+
         for(int i = 0; i < noThreads; i++){
-            final int value = 1;
             final int idx = i;
             threads[i] = new Thread(() -> {
                 try {
-                    
-                    stack.push(value);
                     barrier.await();
                     pop_arr[idx] = stack.pop();
                 } catch (Exception e) { System.out.println(e); }
@@ -88,12 +89,15 @@ public class TestLockFreeStack {
         for(int i = 0; i < noThreads; i++) {
             sum += pop_arr[i];
         }
-        assertEquals(sum, noThreads);
+        
+        
+        assertEquals(noThreads * (noThreads + 1) / 2, sum);
+        assertEquals(0, stack.size());
         
     }
 
     @RepeatedTest(100)
-    @DisplayName("Test sum of pop")
+    @DisplayName("Test empty pop")
     public void testEmptyPop() throws Exception {
 
         threads = new Thread[noThreads];
@@ -123,7 +127,7 @@ public class TestLockFreeStack {
         for(int i = 0; i < noThreads; i++) {
             sum += pop_arr[i];
         }
-        assertEquals(sum, noThreads);
+        assertEquals(noThreads, sum);
         
     }
 }
