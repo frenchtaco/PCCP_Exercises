@@ -22,10 +22,10 @@ Each week we will update this repository with the material used in this week.
 | 6         | 40     | [Lock free data structures](week06/)                 | Raúl                                         |
 | 7         | 41     | [Linearizability](week07/)                           | Raúl                                         |
 |           | 42     | *No Lecture: Fall break*                             | --                                           |
-| 8         | 43     | Performance measurements                             | Peter                                        |
-| 9         | 44     | Performance and scalability                          | Peter                                        |
-| 10        | 45     | Parallel Streams (React)                             | Peter                                        |
-| 11        | 46     | GPU Programming                                      | Peter                                        |
+| 8         | 43     | [Performance measurements](week08/)                  | Peter                                        |
+| 9         | 44     | [Performance and scalability](week09)                | Peter                                        |
+| 10        | 45     | [Parallel Streams](week10/)                          | Peter                                        |
+| 11        | 46     | [Graphics Processing Units (GPU)](week11/)           | Peter                                        |
 | 12        | 47     | Message passing I                                    | Raúl                                         |
 | 13        | 48     | Message Passing II                                   | Raúl                                         |
 | 14        | 49     | Guest lecture + Exam prep                            | TBD + Raúl                                   |
@@ -48,3 +48,4 @@ Remember that when you book a slot in the [Oral Feedback Scheduler in LearnIT](h
 | 10          | 44            | Linearizability + Performance measurements                |
 | 12          | 46            | Performance and scalability + Parallel Streams (React)    |
 | 14          | 49            | TBD + Message passing I + Message passing II              |
+

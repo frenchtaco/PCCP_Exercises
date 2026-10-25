@@ -1,0 +1,46 @@
+# Lecture 9: Performance and Scalability
+
+Monday 26 October 2026
+
+
+## Goals
+
+The goals of this lecture are:
+* To be able to use platform threads, virtual threads and Java's
+  executor framework and futures
+* To describe key obstacles to performance and scalability on shared
+  memory multi-core computers
+* To describe and use techniques to improve performance, such as lock
+  striping, better cache usage, immutable data, avoidance of false
+  sharing, and so on, as illustrated by case studies of concurrent
+  data structures and algorithms
+
+
+## Readings
+
+* Goetz Chapter 5 (already covered in week 4), 6.1, 6.2, and  11 
+* Pardo, Sestoft, Staunstrup: 
+  * [The computer's CPU and RAM](pcppbook-ch8-cpu-ram-20261015.pdf)
+  * [Scalability case studies](pcppbook-ch9-scalability-20261015.pdf)
+    sections 9.1, 9.2 and 9.3 (the latter only cursory)
+* [Java documentation of Executors](https://docs.oracle.com/javase/tutorial/essential/concurrency/executors.html) including the three subsections Executor Interfaces, Thread Pools and Fork/Join
+* [Java documentation of ConcurrentHashMap](https://docs.oracle.com/en/java/javase/26/docs/api/java.base/java/util/concurrent/ConcurrentHashMap.html)
+
+
+## To do before lecture 9
+
+* make sure you have a local copy on your computer of `code-exercises`
+  (from same directory as this file)
+* make sure that you can execute `gradle -PmainClass=exercises09.TestCountPrimesThreads
+  run` in directory `code-exercises/week09exercises` on your computer to perform
+  performance measurement from the command line, not inside an IDE
+
+
+## Lecture slides (TO APPEAR)
+
+[lecture09.pdf ]()
+
+
+## Exercises
+
+[exercises09.pdf](exercises09.pdf)
