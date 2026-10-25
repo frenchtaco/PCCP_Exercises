@@ -36,9 +36,9 @@ The goals of this lecture are:
   performance measurement from the command line, not inside an IDE.
 
 
-## Lecture slides (TO APPEAR)
+## Lecture slides
 
-[lecture09.pdf ]()
+[lecture09.pdf](lecture09.pdf)
 
 
 ## Exercises
