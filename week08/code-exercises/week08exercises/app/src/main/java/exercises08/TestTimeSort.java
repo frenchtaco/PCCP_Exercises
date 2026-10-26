@@ -15,13 +15,34 @@ class TestTimeSort {
   public static void main(String[] args) {
     SystemInfo();
     final int[] intArray = Quicksort.fillIntArray(100_000);
-    Mark8Setup('u', "quicksort", "", 
+    /* Mark8Setup('u', "quicksort", "", 
                () -> Quicksort.shuffle(intArray),
                i -> {
                  Quicksort.quicksort(intArray);
                  assert Quicksort.isSorted(intArray);
                  return intArray[37];
                });
+    Mark8Setup('u', "Arrays.sort", "",
+               () -> Quicksort.shuffle(intArray),
+               i -> {
+                 Arrays.sort(intArray);
+                 assert Quicksort.isSorted(intArray);
+                 return intArray[37];
+               });
+    Mark8Setup('u', "Arrays.parallelSort", "",
+           () -> Quicksort.shuffle(intArray),
+           i -> {
+             Arrays.parallelSort(intArray);
+             assert Quicksort.isSorted(intArray);
+             return intArray[37];
+           }); */
+    Mark8Setup('u', "parallel quicksort", "",
+           () -> Quicksort.shuffle(intArray),
+           i -> {
+             Quicksort.parallelQuicksort(intArray);
+             assert Quicksort.isSorted(intArray);
+             return intArray[37];
+           });
   }
 
   // ========== Infrastructure code ==========
@@ -98,9 +119,41 @@ class TestTimeSort {
         qsort(arr, i, b);                      
       }                                        
     }
+
+    // Parallel implementation
+    static void pqsort(int[] arr, int a, int b) { // sort arr[a..b]
+      if (a < b) {
+        int i = a, j = b;
+        int x = arr[(i+j) / 2];
+        do {
+          while (arr[i] < x) i++;
+          while (arr[j] > x) j--;
+          if (i <= j) {
+            swap(arr, i, j);
+            i++; j--;
+          }
+        } while (i <= j);
+        if (j - a > 50) {
+          final int k = j;
+          Thread t = Thread.ofVirtual().start(() -> pqsort(arr, a, k)); // Start thread to do one partitien
+          pqsort(arr, i, b);
+          try { 
+            t.join(); 
+          } catch (InterruptedException exception) { } // Don't care about errors :)
+        } else {
+          qsort(arr, a, j);
+          pqsort(arr, i, b);
+        }
+      }
+    }
     
     public static void quicksort(int[] arr) {
       qsort(arr, 0, arr.length-1);
+      assert isSorted(arr);
+    }
+
+    public static void parallelQuicksort(int[] arr) {
+      pqsort(arr, 0, arr.length-1);
       assert isSorted(arr);
     }
     

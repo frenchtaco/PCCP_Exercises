@@ -8,7 +8,16 @@ import java.util.function.LongToDoubleFunction;
 public class TestTimeVolatile {
   public static void main(String[] args) {
     SystemInfo();
-    // Add your code here
+    Mark7('u', "callAdd", i -> {
+      LongHolder lh = new LongHolder();
+      lh.callAdd(i);
+      return lh.value();
+    });
+    Mark7('u', "callAddVolatile", i -> {
+      LongHolder lh = new LongHolder();
+      lh.callAddVolatile(i);
+      return lh.valueVolatile();
+    });
   }
 
   static class LongHolder {

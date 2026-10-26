@@ -15,16 +15,19 @@ import java.util.function.LongToDoubleFunction;
 
 class Benchmark {
   public static void main(String[] args) {
-    SystemInfo();
-    Mark0();
-    Mark1();
-    Mark2();
-    Mark3();
-    Mark4();
-    Mark5();
-    Mark6('n', "multiply", i -> multiply(i));
-    Mark7('n', "multiply", i -> multiply(i));
+    // SystemInfo();
+    // Mark0();
+    // Mark1();
+    // Mark2();
+    // Mark3();
+    // Mark4();
+    // Mark5();
+    // Mark6('n', "multiply", i -> multiply(i));
+    // Mark7('n', "multiply", i -> multiply(i));
     // MathFunctionBenchmarks();
+    // Mark7('n', "sqrt",   i -> Math.sqrt(0.1 * (i & 0xFF)));
+    // Mark7('n', "random", i -> Math.random());
+    Mark7('n', "sqrt",   i -> Math.sqrt(Math.random()));
     // final java.util.Random rnd = new java.util.Random();
     // final int n = 1638400;
     // Mark8('n', "random_index", "", i -> rnd.nextInt(n));
