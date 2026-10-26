@@ -31,6 +31,6 @@ The goals of this lecture are:
 [lecture10.pdf]()
 
 
-## Exercises (TO APPEAR)
+## Exercises 
 
-[exercises10.pdf]()
+[exercises10.pdf](exercises10.pdf)
