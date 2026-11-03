@@ -13,13 +13,15 @@ The goals of this lecture are:
 * To understand and describe how a GPU is programmed, using matrix
   multiplication as an example. 
 * To understand and discuss for what types of problems a GPU can
-  increase performance. 
+  achieve good performance.
+* To understand and be able to use a CPU core's vector instructions
+  for core-internal parallel numeric computations. 
 
 
 ## Readings (TO APPEAR)
 
 * Pardo, Sestoft, Staunstrup: 
- * The computer's CPU and RAM
+  * [The computer's CPU and RAM](pcppbook-ch8-cpu-ram-20261015.pdf)
 * ...
 
 
