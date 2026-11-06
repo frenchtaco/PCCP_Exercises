@@ -24,8 +24,8 @@ The goals of this lecture are:
 
 * Pardo, Sestoft, Staunstrup: 
   * [The computer's CPU and RAM](pcppbook-ch8-cpu-ram-20261015.pdf)
-  * [Nvidia's CUDA C++ Programming Guide](https://docs.nvidia.com/cuda/pdf/CUDA_C_Programming_Guide.pdf) - for reference, certainly not all 598 pages.
-  * [Documentation of Java's vector instructions](https://docs.oracle.com/en/java/javase/26/docs/api/jdk.incubator.vector/jdk/incubator/vector/package-summary.html).  You will need in mostly FloatVector, ShortVector, VectorInstructions, VectorMask, and VectorSpecies.  
+* [Nvidia's CUDA C++ Programming Guide](https://docs.nvidia.com/cuda/pdf/CUDA_C_Programming_Guide.pdf) - for reference, certainly not all 598 pages.
+* [Documentation of Java's vector instructions](https://docs.oracle.com/en/java/javase/26/docs/api/jdk.incubator.vector/jdk/incubator/vector/package-summary.html).  You will need in mostly FloatVector, ShortVector, VectorInstructions, VectorMask, and VectorSpecies.  
 
 
 
