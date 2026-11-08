@@ -40,12 +40,12 @@ However, the week numbers for oral feedback sessions are fixed, only the content
 
 Remember that when you book a slot in the [Oral Feedback Scheduler in LearnIT](https://learnit.itu.dk/mod/organizer/view.php?id=250667), the **slot is recurrent, i.e., it is for all the weeks below in the day of the week and time that you selected**.
 
-| Course week | Calendar Week | Exercises                                                 |
-|-------------|---------------|-----------------------------------------------------------|
-| 3           | 37            | Intro to concurrency & Mutual exclusion + Shared memory I |
-| 5           | 39            | Shared memory II  +  Java Memory Model                    |
-| 8           | 41            | Testing & Verification + Lock-free data structure         |
-| 10          | 44            | Linearizability + Performance measurements                |
-| 12          | 46            | Performance and scalability + Parallel Streams (React)    |
-| 14          | 49            | TBD + Message passing I + Message passing II              |
+| Course week | Calendar Week | Exercises                                                          |
+|-------------|---------------|--------------------------------------------------------------------|
+| 3           | 37            | Intro to concurrency & Mutual exclusion + Shared memory I          |
+| 5           | 39            | Shared memory II  +  Java Memory Model                             |
+| 8           | 41            | Testing & Verification + Lock-free data structure                  |
+| 10          | 44            | Linearizability + Performance measurements                         |
+| 12          | 46            | Performance and scalability + Parallel Streams (React)             |
+| 14          | 49            | Graphics Processing Units + Message passing I + Message passing II |
 

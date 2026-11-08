@@ -26,11 +26,11 @@ The goals of this lecture are:
 
 
 
-## Lecture slides (TO APPEAR)
+## Lecture slides
 
-[lecture10.pdf]()
+[lecture10.pdf](lecture10.pdf)
 
 
-## Exercises (TO APPEAR)
+## Exercises 
 
-[exercises10.pdf]()
+[exercises10.pdf](exercises10.pdf)

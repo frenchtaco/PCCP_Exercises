@@ -33,12 +33,12 @@ The goals of this lecture are:
   (from same directory as this file)
 * make sure that you can execute `gradle -PmainClass=exercises09.TestCountPrimesThreads
   run` in directory `code-exercises/week09exercises` on your computer to perform
-  performance measurement from the command line, not inside an IDE
+  performance measurement from the command line, not inside an IDE.
 
 
-## Lecture slides (TO APPEAR)
+## Lecture slides
 
-[lecture09.pdf ]()
+[lecture09.pdf](lecture09.pdf)
 
 
 ## Exercises
