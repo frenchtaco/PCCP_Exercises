@@ -3,4 +3,5 @@ git remote add pcpp "https://github.itu.dk/PCPP/PCPP2026-Public.git"
 git pull pcpp main 
 
 
-gradle "-PmainClass=exercises01.TestLongCounterExperiments" run
+gradle "-PmainClass=exercises09.TestCountPrimesThreads" run
+gradle cleanTest test --tests "exercises09.TestCountPrimesThreads"    

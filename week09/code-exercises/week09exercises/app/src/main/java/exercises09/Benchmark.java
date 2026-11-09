@@ -16,14 +16,14 @@ import java.util.function.LongToDoubleFunction;
 class Benchmark {
   public static void main(String[] args) {
     SystemInfo();
-    Mark0();
-    Mark1();
-    Mark2();
-    Mark3();
-    Mark4();
-    Mark5();
-    Mark6('n', "multiply", i -> multiply(i));
-    Mark7('n', "multiply", i -> multiply(i));
+    // Mark0();
+    // Mark1();
+    // Mark2();
+    // Mark3();
+    // Mark4();
+    // Mark5();
+    // Mark6('n', "multiply", i -> multiply(i));
+    // Mark7('n', "multiply", i -> multiply(i));
     // MathFunctionBenchmarks();
     // final java.util.Random rnd = new java.util.Random();
     // final int n = 1638400;
@@ -34,7 +34,7 @@ class Benchmark {
     // GetPseudorandomItems();
     // SortingBenchmarks();
     // SortingScalabilityBenchmarks();
-    // MemoryLatency.MemoryLatencies();
+    MemoryLatency.MemoryLatencies();
     // BubbleSortBenchmarks();
     // BoxingBenchmark(); // For Java run-time data note
     // SimdExamples();

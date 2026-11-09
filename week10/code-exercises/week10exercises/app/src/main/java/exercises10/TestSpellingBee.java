@@ -17,20 +17,36 @@ public class TestSpellingBee {
   public static void main(String[] args) {
     String filename = "words.txt";
     // 10.2.1:
-    List<String> cleanWords = null; // replace with solution
+    List<String> cleanWords = readWords(filename)
+      .map(String::toLowerCase)
+      .filter(word -> word.length() >= 4)
+      .filter(word -> onlyaz(word))
+      .distinct()
+      .collect(Collectors.toList());
 
     System.out.println("Number of clean words " + cleanWords.size());    
     System.out.println("----------------------------------------");    
     // 10.2.4:
+    Puzzle p = new Puzzle('h', letterSet("chikmnu"));
+    p.solutions(cleanWords).forEach(System.out::println);
+    System.out.println(p.solutions(cleanWords).count()); // 22
 
     System.out.println("----------------------------------------");
     // 10.2.5:
-    List<Puzzle> puzzles = null;  // replace with solution
+    List<Puzzle> puzzles = cleanWords.stream()
+      .map(word -> letterSet(word))
+      .filter(W -> W.size() == 7)
+      .distinct()
+      .flatMap(W -> W.stream().map(m -> new Puzzle(m, W)))
+      .collect(Collectors.toList());
 
     System.out.println("Number of puzzles " + puzzles.size());
     System.out.println("----------------------------------------");
     // 10.2.6:
-
+    puzzles.stream()
+      .limit(20)
+      .forEach(System.out::println);
+      
     System.out.println("----------------------------------------");
     // 10.2.7: Warning: SLOW
     List<Puzzle> goodPuzzles = null;  // replace with solution
@@ -64,12 +80,16 @@ public class TestSpellingBee {
 
     // 10.2.2:
     public boolean hasSolution(String s) {
-      return true; // replace with solution
+      Set<Character> letters = letterSet(s);
+      return s.length() >= 4
+        && letters.contains(m)
+        && letters.stream().allMatch(W::contains);
     }
 
     // 10.2.3:
     public Stream<String> solutions(List<String> cleanWords) {
-      return null; // replace with solution
+      return cleanWords.stream()
+        .filter(word -> hasSolution(word));
     }
 
     public String toString() {

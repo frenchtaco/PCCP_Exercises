@@ -12,45 +12,88 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeMap;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class TestWordStream {
   public static void main(String[] args) {
     String filename = "words.txt";
-    // 10.1.1:
+
+    // System.out.println(new java.io.File(filename).getAbsolutePath());
+    long count = readWords(filename).count();
+    System.out.println("Word-count: " + count);
 
     System.out.println("----------------------------------------");    
-    // 10.1.2:
+    readWords(filename)
+      .limit(20)
+      .forEach(System.out::println);
 
     System.out.println("----------------------------------------");
-    // 10.1.3:
+    readWords(filename)
+      .filter(word -> word.length() >= 22)
+      .forEach(System.out::println);
 
     System.out.println("----------------------------------------");
-    // 10.1.4:
+    readWords(filename)
+      .map(String::toLowerCase)
+      .limit(20)
+      .forEach(System.out::println);
 
     System.out.println("----------------------------------------");
-    // 10.1.5:
+    long count5 = readWords(filename)
+      .map(String::toLowerCase)
+      .filter(word -> word.length() > 1)
+      .filter(word -> onlyaz(word))
+      .count();
+    System.out.println(count5);  // should be 72097, but I get 74533
 
     System.out.println("----------------------------------------");
-    // 10.1.6:
-    List<String> cleanWords = null;  // replace with solution
+    List<String> cleanWords = readWords(filename)
+      .map(String::toLowerCase)
+      .filter(word -> word.length() > 1)
+      .filter(word -> onlyaz(word))
+      .distinct()
+      .collect(Collectors.toList());
 
     System.out.println("Number of clean words without duplicates " + cleanWords.size());
     System.out.println("----------------------------------------");
-    // 10.1.7:
+    cleanWords.stream()
+      .filter(TestWordStream::isPalindrome)
+      .forEach(System.out::println);
 
     System.out.println("----------------------------------------");
-    // 10.1.8 and 10.1.9:
+    Map<Integer, List<String>> lengthGroups = cleanWords.stream()
+      .collect(Collectors.groupingBy(String::length));
+
+    System.out.print(lengthGroups.get(19));
    
     System.out.println("----------------------------------------");
-    // 10.1.10:
+    cleanWords.stream()
+      .map(word -> counts(word))
+      .limit(20)
+      .forEach(System.out::println);
 
     System.out.println("----------------------------------------");
-    // 10.1.11:
+    Map<Map<Character,Long>, List<String>> anagram1 = cleanWords.stream()
+      .collect(Collectors.groupingBy(word -> counts(word)));
+
+    anagram1.entrySet().stream()
+      .map(kv -> kv.getValue())
+      .filter(group -> group.size() > 1)
+      .forEach(System.out::println);
 
     System.out.println("----------------------------------------");
-    // 10.1.12: 
+    Timer t = new Timer();
+    Map<Map<Character,Long>, List<String>> anagramSeq = cleanWords.stream()
+        .collect(Collectors.groupingBy(word -> counts(word)));
+    System.out.println("Sequential: " + t.check() + " s"); // 1.3333001 s
+
+    t = new Timer();
+    Map<Map<Character,Long>, List<String>> anagramPar = cleanWords.stream()
+        .parallel()
+        .collect(Collectors.groupingBy(word -> counts(word)));
+    System.out.println("Parallel:   " + t.check() + " s"); // 0.6687721 s
 
     System.out.println("----------------------------------------");
     // 10.1.13:
@@ -59,7 +102,13 @@ public class TestWordStream {
 
   // 10.1.7:
   public static boolean isPalindrome(String s) {
-    return true; // replace with solution
+    for (int i = 0, j = s.length() - 1; i < j; i++, j--) {
+      if (s.charAt(i) != s.charAt(j)) {
+        return false;
+      }
+    }
+
+    return true;
   }
 
   // 10.1.14:
